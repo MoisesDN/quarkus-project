@@ -1,12 +1,13 @@
 package br.com.moisesdias.hibernate;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Produto extends PanacheEntity {
-
+public class Produto extends PanacheEntityBase {
+    @Id
     private Long id;
     private String nome;
 
@@ -26,11 +27,4 @@ public class Produto extends PanacheEntity {
         this.nome = nome;
     }
 
-    @Override
-    public String toString() {
-        return "Produto{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                '}';
-    }
 }
