@@ -1,5 +1,6 @@
 package br.com.moisesdias.hibernate;
 
+import io.micrometer.core.annotation.Counted;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
@@ -16,6 +17,7 @@ public class ProdutosResouce {
 
     @GET
     @Produces(value = MediaType.APPLICATION_JSON)
+    @Counted(value = "produtos_listados_total", description = "Total de produtos listados")
     public List<Produto> getProdutos() {
         return entityManager.createQuery("select p from Produto p", Produto.class).getResultList();
     }
