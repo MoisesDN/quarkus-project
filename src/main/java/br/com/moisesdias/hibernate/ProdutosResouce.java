@@ -15,6 +15,7 @@ public class ProdutosResouce {
 
     @Inject EntityManager entityManager;
 
+    @SuppressWarnings("null")
     @GET
     @Produces(value = MediaType.APPLICATION_JSON)
     @Counted(value = "produtos_listados_total", description = "Total de produtos listados")

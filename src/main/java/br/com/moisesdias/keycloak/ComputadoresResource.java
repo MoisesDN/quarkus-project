@@ -23,7 +23,7 @@ public class ComputadoresResource {
     @GET
     @Path("publico")
     @Produces(MediaType.TEXT_PLAIN)
-    public String methodname() {
+    public String publico() {
         return "Hello, public!";
     }
 
